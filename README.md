@@ -2,6 +2,8 @@
 
 A comparative study of a classical seasonal time-series model (**SARIMA**) and two recurrent neural networks (**LSTM** and **GRU**) for retail sales forecasting on the Rossmann Store Sales dataset.
 
+**Notebook Link** (https://colab.research.google.com/drive/1qVk9c1FBnDcPnzpa2O44AdsuLb-lgsVN?usp=sharing)
+
 ---
 
 ## Key finding
