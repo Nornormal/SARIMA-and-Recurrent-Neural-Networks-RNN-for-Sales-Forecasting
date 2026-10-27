@@ -80,7 +80,7 @@ Test-set RMSE for all three models, plus residual analysis (histograms and resid
 |---|---|
 | `Rossman_Sales_Forecasting_DL_1.ipynb` | End-to-end notebook: cleaning, EDA, SARIMA, LSTM, GRU, comparison |
 | `SARIMA_RNN_Final_Proposal.pdf` | Full written report (literature review, methodology, results) |
-| `dataset/` | Rossmann `train.csv` and `store.csv` (**you add these**) |
+| `dataset/` | Rossmann `train.csv` and `store.csv` |
 
 ---
 
