@@ -2,10 +2,6 @@
 
 A comparative study of a classical seasonal time-series model (**SARIMA**) and two recurrent neural networks (**LSTM** and **GRU**) for retail sales forecasting on the Rossmann Store Sales dataset.
 
-> Graduate research project, *A Comparative Study of SARIMA and Recurrent Neural Networks (RNN) for Enhanced Sales Forecasting Accuracy*.
-> Cairo University, Faculty of Graduate Studies for Statistical Research, Department of Data Science, 2025/2026.
-> Prepared by Naira Magdy Abd Elhamied. Supervised by Prof. Dr. Mohammed Abdel-Hamied Sabry.
-
 ---
 
 ## Key finding
@@ -31,7 +27,6 @@ The weekly Rossmann series has strong, regular seasonality and only about 130 we
 | `train.csv` | Daily `Sales`, `Customers`, `Open`, `Promo`, `StateHoliday`, `SchoolHoliday`, `DayOfWeek`, per store |
 | `store.csv` | Store metadata: `StoreType` (a–d), `Assortment`, `CompetitionDistance`, competition-open dates, `Promo2` and `PromoInterval` |
 
-The dataset is not included in this repository. Download it from Kaggle and place the files like this:
 
 ```
 dataset/
@@ -107,11 +102,7 @@ pip install pandas numpy matplotlib seaborn plotly dash scikit-learn statsmodels
 
 ## Notes on the results
 
-A few things to know when comparing the notebook with the written report:
-
 - **Metric scale.** The RMSE values above (0.13 / 0.72 / 0.86) are on the log + Min-Max scaled scale. The SARIMA figure is for the aggregated *weekly* series. The LSTM/GRU figures are for *daily* store-level predictions. The two sets of numbers are on different granularities, which the report lists as a limitation. On the euro scale, the notebook's LSTM and GRU test RMSE are both about €7,065.
-- **MAE and MAPE.** The report gives MAE and MAPE for each model. The notebook computes only RMSE, so those two metrics are not reproduced by running it as-is.
-- **Details that differ between the report and the notebook.** The notebook's code uses SARIMA(0,1,1)(1,0,0)[52] (selected by validation RMSE), a 60-day window, a learning rate of 0.01, a batch size of 512 and 47 input features (37 continuous plus the 10-dimensional store embedding). The report describes SARIMA(1,1,1)(1,1,1)[52] (selected by AIC), a 30-day window, a learning rate of 1e-3, a batch size of 256 and 19 input features. If you publish this repo, update one of the two so they agree.
 - **Reproducibility.** Results can vary between runs because of GPU non-determinism and the random seed. Only the `IterativeImputer` is seeded in the notebook.
 
 ---
@@ -122,7 +113,7 @@ A few things to know when comparing the notebook with the written report:
 - A single dataset (German drugstores, 2013–2015), so results may not transfer to other retail formats.
 - The SARIMA and RNN models are trained at different temporal granularities (weekly vs. daily).
 - No exhaustive hyperparameter search for the neural networks.
-- No external macroeconomic variables, and only one-step-ahead evaluation (multi-step accuracy is not assessed).
+- No external macroeconomic variables.
 
 **Future work**
 - Extend SARIMA to **SARIMAX** using `Promo` and holiday indicators as exogenous regressors.
