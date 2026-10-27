@@ -28,12 +28,6 @@ The weekly Rossmann series has strong, regular seasonality and only about 130 we
 | `store.csv` | Store metadata: `StoreType` (a–d), `Assortment`, `CompetitionDistance`, competition-open dates, `Promo2` and `PromoInterval` |
 
 
-```
-dataset/
-├── train.csv
-└── store.csv
-```
-
 ---
 
 ## Pipeline
